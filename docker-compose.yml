@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  db:
+    container_name: db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "@A123456"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  web:
+    container_name: web
+    build: .
+    depends_on:
+      - db
+    environment:
+      ConnectionString: "Server=db;Database=Demo;User ID='sa';Password='@A123456';TrustServerCertificate=True"
+      NeedMigrate: "Y"
+    ports:
+      - "8080:8080"
+    entrypoint: ["dotnet", "Order.DDD.Demo.WebApplication.dll"]
