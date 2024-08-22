@@ -2,6 +2,10 @@ using System.Collections.ObjectModel;
 
 namespace Order.DDD.Demo.SeedWork;
 
+/// <summary>
+/// 聚合根
+/// </summary>
+/// <typeparam name="TId"></typeparam>
 public abstract class AggregateRoot<TId> where TId : ValueObject<TId>
 {
     /// <summary>

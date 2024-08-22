@@ -1,5 +1,8 @@
 namespace Order.DDD.Demo.UseCase.Port.Out;
 
+/// <summary>
+/// 訂單輸出埠
+/// </summary>
 public interface IOrderOutPort
 {
     /// <summary>

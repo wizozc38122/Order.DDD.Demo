@@ -1,5 +1,9 @@
 namespace Order.DDD.Demo.SeedWork;
 
+/// <summary>
+/// Entity
+/// </summary>
+/// <typeparam name="TId"></typeparam>
 public abstract class Entity<TId> : IInternalEventHandler where TId : ValueObject<TId>
 {
     /// <summary>

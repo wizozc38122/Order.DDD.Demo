@@ -5,9 +5,16 @@ using Order.DDD.Demo.UseCase.Exception;
 
 namespace Order.DDD.Demo.WebApplication.Infrastructure.ExceptionFilter;
 
+/// <summary>
+/// 取消訂單例外過濾器
+/// </summary>
 [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
 public class CancelOrderExceptionFilter : ExceptionFilterAttribute
 {
+    /// <summary>
+    /// 例外處理
+    /// </summary>
+    /// <param name="context"></param>
     public override void OnException(ExceptionContext context)
     {
         switch (context.Exception)

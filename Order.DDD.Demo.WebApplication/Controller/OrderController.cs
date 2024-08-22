@@ -4,6 +4,11 @@ using Order.DDD.Demo.WebApplication.Infrastructure.ExceptionFilter;
 
 namespace Order.DDD.Demo.WebApplication.Controller;
 
+/// <summary>
+/// 訂單 API
+/// </summary>
+/// <param name="createOrderService"></param>
+/// <param name="cancelOrderService"></param>
 [ApiController]
 [Route("[controller]")]
 public class OrderController(ICreateOrderService createOrderService, ICancelOrderService cancelOrderService)

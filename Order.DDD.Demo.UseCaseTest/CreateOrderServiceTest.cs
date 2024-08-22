@@ -73,7 +73,7 @@ public class CreateOrderServiceTest
         Func<Task> act = async () => await sut.HandleAsync(customerId, orderItems);
         
         // Assert
-        await act.Should().ThrowAsync<CreateOrderFaildException>();
+        await act.Should().ThrowAsync<CreateOrderFailedException>();
         await _orderOutPort.Received(1).SaveAsync(Arg.Any<Entity.Order>());
     }
 }

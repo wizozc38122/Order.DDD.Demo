@@ -4,8 +4,18 @@ using Order.DDD.Demo.UseCase.Port.Out;
 
 namespace Order.DDD.Demo.UseCase;
 
+/// <summary>
+/// 確認付款服務
+/// </summary>
+/// <param name="orderOutPort"></param>
 public class ConfirmPaymentService(IOrderOutPort orderOutPort) : IConfirmPaymentService
 {
+    /// <summary>
+    /// 處理確認付款
+    /// </summary>
+    /// <param name="orderId"></param>
+    /// <exception cref="OrderNotFoundException"></exception>
+    /// <exception cref="OrderChangeStatusFailedException"></exception>
     public async Task HandleAsync(Guid orderId)
     {
         // 取得訂單資訊

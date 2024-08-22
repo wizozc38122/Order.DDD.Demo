@@ -4,8 +4,20 @@ using Order.DDD.Demo.UseCase.Port.Out;
 
 namespace Order.DDD.Demo.UseCase;
 
+/// <summary>
+/// 取消訂單服務
+/// </summary>
+/// <param name="orderOutPort"></param>
+/// <param name="timeProvider"></param>
 public class CancelOrderService(IOrderOutPort orderOutPort, TimeProvider timeProvider) : ICancelOrderService
 {
+    /// <summary>
+    /// 處理取消訂單
+    /// </summary>
+    /// <param name="orderId"></param>
+    /// <param name="reason"></param>
+    /// <exception cref="OrderNotFoundException"></exception>
+    /// <exception cref="OrderChangeStatusFailedException"></exception>
     public async Task HandleAsync(Guid orderId, string reason)
     {
         // 取得訂單資訊

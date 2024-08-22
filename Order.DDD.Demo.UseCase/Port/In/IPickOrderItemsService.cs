@@ -5,5 +5,10 @@ namespace Order.DDD.Demo.UseCase.Port.In;
 /// </summary>
 public interface IPickOrderItemsService
 {
+    /// <summary>
+    /// 處理揀貨
+    /// </summary>
+    /// <param name="orderId"></param>
+    /// <returns></returns>
     Task HandleAsync(Guid orderId);
 }

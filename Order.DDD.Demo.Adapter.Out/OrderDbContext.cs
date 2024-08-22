@@ -3,6 +3,9 @@ using Order.DDD.Demo.Adapter.Out.Configuration;
 
 namespace Order.DDD.Demo.Adapter.Out;
 
+/// <summary>
+/// Order DbContext
+/// </summary>
 public class OrderDbContext : DbContext
 {
     public DbSet<Entity.Order> Order { get; set; }

@@ -4,8 +4,18 @@ using Order.DDD.Demo.UseCase.Port.Out;
 
 namespace Order.DDD.Demo.UseCase;
 
+/// <summary>
+/// 完成訂單服務
+/// </summary>
+/// <param name="orderOutPort"></param>
 public class CompleteOrderService(IOrderOutPort orderOutPort) : ICompleteOrderService
 {
+    /// <summary>
+    /// 處理完成訂單
+    /// </summary>
+    /// <param name="orderId"></param>
+    /// <exception cref="OrderNotFoundException"></exception>
+    /// <exception cref="OrderChangeStatusFailedException"></exception>
     public async Task HandleAsync(Guid orderId)
     {
         // 取得訂單資訊

@@ -5,8 +5,20 @@ using Order.DDD.Demo.UseCase.Port.Out;
 
 namespace Order.DDD.Demo.UseCase;
 
+/// <summary>
+/// 建立訂單服務
+/// </summary>
+/// <param name="orderOutPort"></param>
+/// <param name="timeProvider"></param>
 public class CreateOrderService(IOrderOutPort orderOutPort, TimeProvider timeProvider) : ICreateOrderService
 {
+    /// <summary>
+    /// 處理建立訂單
+    /// </summary>
+    /// <param name="customerId"></param>
+    /// <param name="orderItems"></param>
+    /// <returns></returns>
+    /// <exception cref="CreateOrderFailedException"></exception>
     public async Task<Guid> HandleAsync(Guid customerId, List<OrderItemInput> orderItems)
     {
         // 產生訂單Id
@@ -27,6 +39,6 @@ public class CreateOrderService(IOrderOutPort orderOutPort, TimeProvider timePro
             return orderId;
         }
 
-        throw new CreateOrderFaildException("建立訂單失敗");
+        throw new CreateOrderFailedException("建立訂單失敗");
     }
 }

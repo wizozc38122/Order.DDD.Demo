@@ -4,8 +4,18 @@ using Order.DDD.Demo.UseCase.Port.Out;
 
 namespace Order.DDD.Demo.UseCase;
 
+/// <summary>
+/// 訂單揀貨服務
+/// </summary>
+/// <param name="orderOutPort"></param>
 public class PickOrderItemsService(IOrderOutPort orderOutPort) : IPickOrderItemsService
 {
+    /// <summary>
+    /// 處理揀貨
+    /// </summary>
+    /// <param name="orderId"></param>
+    /// <exception cref="OrderNotFoundException"></exception>
+    /// <exception cref="OrderChangeStatusFailedException"></exception>
     public async Task HandleAsync(Guid orderId)
     {
         // 取得訂單

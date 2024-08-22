@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Order.DDD.Demo.Adapter.Out.Configuration;
 
+/// <summary>
+/// Order Configuration
+/// </summary>
 public class OrderConfiguration : IEntityTypeConfiguration<Entity.Order>
 {
     public void Configure(EntityTypeBuilder<Entity.Order> builder)

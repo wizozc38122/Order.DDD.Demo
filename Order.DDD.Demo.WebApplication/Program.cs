@@ -26,6 +26,7 @@ builder.Services.AddDbContext<OrderDbContext>(
     o =>
         o.UseSqlServer(connectionString));
 
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
